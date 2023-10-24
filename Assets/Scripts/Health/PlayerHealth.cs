@@ -80,4 +80,19 @@ public class PlayerHealth : Health
         yield return new WaitForSeconds(deathDelay);
         _gameManager.Lose();
     }
+
+    public int GetHealth()
+    {
+        return health;
+    }
+
+    public void IncreaseHealth(int healthIncrease)
+    {
+        int newHealth = healthIncrease + health;
+        if (newHealth > healthBar.maxValue)
+            health = (int) healthBar.maxValue;
+        else
+            health = newHealth;
+        healthBar.value = health;
+    }
 }

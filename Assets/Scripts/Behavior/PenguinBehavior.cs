@@ -18,6 +18,7 @@ public class PenguinBehavior : MonoBehaviour
     private GameManager _gameManager;
     private AudioPlayer _audioPlayer;
     private PenguinPathFinder _penguinPathFinder;
+    private bool _hasTalked;
     private void Start()
     {
         _conversationHandler = FindObjectOfType<ConversationHandler>();
@@ -44,9 +45,13 @@ public class PenguinBehavior : MonoBehaviour
             _playerInventory = other.GetComponent<PlayerBehavior>().GetInventory();
             if (!CheckPlayerInventory())
             {
-                _penguinPathFinder.Disable();
-                _conversationHandler.SetDialogs(firstConversationSo.GetDialogs());
-                _conversationHandler.StartConversation();
+                if (!_hasTalked)
+                {
+                    _hasTalked = true;
+                    _penguinPathFinder.Disable();
+                    _conversationHandler.SetDialogs(firstConversationSo.GetDialogs());
+                    _conversationHandler.StartConversation();
+                }
             }
             else
             {
