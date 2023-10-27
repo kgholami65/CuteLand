@@ -35,13 +35,13 @@ public class MarshalBehavior : MonoBehaviour
             if (!CheckPlayerInventory())
             {
                 _conversationHandler.SetDialogs(firstConversationSo.GetDialogs());
-                _conversationHandler.StartConversation();
+                _conversationHandler.StartConversation(false);
             }
             else
             {
                 _conversationHandler.SetDialogs(secondConversationSo.GetDialogs());
                 ConsumeItems();
-                _conversationHandler.StartConversation();
+                _conversationHandler.StartConversation(false);
                 StartCoroutine(WinPlayer());
             }
         }

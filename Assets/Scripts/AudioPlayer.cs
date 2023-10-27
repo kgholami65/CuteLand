@@ -9,7 +9,6 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] private AudioClip questCompleteClip;
     [SerializeField] private AudioClip playerHitSound;
     [SerializeField] [Range(0, 1)] private float impactSoundVolume;
-    private Camera _camera;
     private AudioSource _audioSource;
 
     private void Awake()
@@ -22,7 +21,6 @@ public class AudioPlayer : MonoBehaviour
         else
         {
             DontDestroyOnLoad(gameObject);
-            _camera = Camera.main;
             _audioSource = GetComponent<AudioSource>();
         }
     }

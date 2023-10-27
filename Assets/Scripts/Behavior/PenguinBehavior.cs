@@ -50,14 +50,14 @@ public class PenguinBehavior : MonoBehaviour
                     _hasTalked = true;
                     _penguinPathFinder.Disable();
                     _conversationHandler.SetDialogs(firstConversationSo.GetDialogs());
-                    _conversationHandler.StartConversation();
+                    _conversationHandler.StartConversation(false);
                 }
             }
             else
             {
                 _conversationHandler.SetDialogs(secondConversationSo.GetDialogs());
                 ConsumeItems();
-                _conversationHandler.StartConversation();
+                _conversationHandler.StartConversation(false);
                 _penguinPathFinder.Disable();
                 StartCoroutine(WinPlayer());
             }

@@ -24,7 +24,6 @@ public class WinScreenHandler : MonoBehaviour
 
     public void Continue()
     {
-        _gameManager.currentLevelIndex++;
         SceneManager.LoadScene("Level" + _gameManager.currentLevelIndex);
     }
 

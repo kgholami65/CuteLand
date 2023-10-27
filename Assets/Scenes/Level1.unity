@@ -757,7 +757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &991253152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,6 +772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationHandler: {fileID: 1878548626}
   conversationSo: {fileID: 11400000, guid: 40949a92f5d330a4ab6a4948c0ddabf4, type: 2}
+  hintDuration: 4
 --- !u!61 &991253153
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1587,7 +1588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1348061907
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1628,6 +1629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationHandler: {fileID: 1878548626}
   conversationSo: {fileID: 11400000, guid: 6bcc19d1f323c644e8231e2654f2d023, type: 2}
+  hintDuration: 4
 --- !u!4 &1348061909
 Transform:
   m_ObjectHideFlags: 0

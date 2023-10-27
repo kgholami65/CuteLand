@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     public void Win()
     {
+        currentLevelIndex++;
         SceneManager.LoadScene("Win Scene");
     }
 

@@ -7,6 +7,7 @@ public class Tutorial : MonoBehaviour
 {
     [SerializeField] private ConversationHandler conversationHandler;
     [SerializeField] private ConversationSO conversationSo;
+    [SerializeField] private float hintDuration;
     private bool _hasShowed;
     private void Start()
     {
@@ -16,10 +17,15 @@ public class Tutorial : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag(TagsAndLayers.PlayerTag) && !_hasShowed)
-        {
-            conversationHandler.SetDialogs(conversationSo.GetDialogs());
-            conversationHandler.StartConversation();
-            _hasShowed = true;
-        }
+            StartCoroutine(ShowHint());
+    }
+
+    private IEnumerator ShowHint()
+    {
+        conversationHandler.SetDialogs(conversationSo.GetDialogs());
+        conversationHandler.StartConversation(true);
+        _hasShowed = true;
+        yield return new WaitForSeconds(hintDuration);
+        conversationHandler.QuitConversation();
     }
 }

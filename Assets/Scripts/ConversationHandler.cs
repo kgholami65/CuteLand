@@ -20,12 +20,13 @@ public class ConversationHandler : MonoBehaviour
         _playerMovement = FindObjectOfType<PlayerMovement>();
     }
 
-    public void StartConversation()
+    public void StartConversation(bool enable)
     {
         _hasFinished = false;
         conversationCanvasPrefab.SetActive(true);
         _conversationText.text = _dialogs[0];
-        _playerMovement.Disable();
+        if (!enable)
+            _playerMovement.Disable();
     }
 
     public void DisplayNextConversation()
